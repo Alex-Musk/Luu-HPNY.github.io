@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .main {
+            text-align: center;
+        }
+
+        canvas {
+          
+    position:absolute;
+    z-index:5;
+    top:0;
+    width:100% !important;
+}
+
+    </style>
+</head>
+
+<body>
+        <canvas id="canvas">Canvas is not supported in your browser.</canvas>
+        <video id="start" autoplay class="video" style="width: 500px; border-radius: 30px">
+            <source src="main.mp4">
+        </video>
+        <div >
+            <video id="end" autoplay class=" video-grow" >
+                <source src="end.mp4">
+            </video>
+        </div>
+    <script>
+         document.getElementById("end").style.display = 'none';
+         document.getElementById("canvas").style.display = 'none';
+         const body = document.getElementById("start");
+
+body.addEventListener("click", function(event) {
+  run();
+});
+
+function run(){
+    document.getElementById("canvas").style.display = "block";
+        document.getElementById("start").style.display = "none";
+        const video = document.createElement("video");
+        video.source="<https://rr3---sn-npoe7nsl.c.drive.google.com/videoplayback?expire=1705394749&ei=DRimZdHmC-jJrvIPytSPwA0&ip=2001:ee0:213:aab7:2990:f865:7013:5238&id=68fd006ee62cb7cc&itag=22&source=webdrive&requiressl=yes&xpc=EghonaK1InoBAQ==&ttl=transient&susc=dr&driveid=1v7SCtXXQRtySOZyzibeaWukxwyNs7Cnu&app=explorer&eaua=WIug9EHVF8Q&mime=video/mp4&vprv=1&prv=1&dur=6.362&lmt=1705383945559897&subapp=DRIVE_WEB_FILE_VIEWER&txp=0001224&sparams=expire,ei,ip,id,itag,source,requiressl,xpc,ttl,susc,driveid,app,eaua,mime,vprv,prv,dur,lmt&sig=AJfQdSswRAIgFW2MBUGgam8GzPTYN-FUJ4Nm6-o2pTaqy1GLvL8Iu40CIEGnLb-gi7oTnaUDvcSVEhqiKWUrpsJR_fCx_1dawkDy&cpn=bRIN1m3EDEXJKJIn&c=WEB_EMBEDDED_PLAYER&cver=1.20240109.00.00&redirect_counter=1&cm2rm=sn-npozy7s&fexp=24350138,24350146,24350148,24350150,24350169&req_id=b8b873cc963ca3ee&cms_redirect=yes&cmsv=e&mh=NQ&mm=34&mn=sn-npoe7nsl&ms=ltu&mt=1705383647&mv=m&mvi=3&pl=44&lsparams=mh,mm,mn,ms,mv,mvi,pl&lsig=AAO5W4owRQIgIsMMyJh_NaoDx5RrwxDkuHA2bndzayn69cjju6WKMIICIQCuhIATodE1wUnj1SdaTFc9W4uy-rStQDBBJXEdFch67g%3D%3D";
+        video.className = "video-grow";
+        document.getElementById("end").appendChild(video);
+        document.getElementById("end").style.display = "";
+        video.play();
+  
+}
+            
+
+</script>
+<script type="text/javascript" src="script.js"></script>    
+</body>
+
+</html>
